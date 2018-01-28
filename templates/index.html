@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+  <title>Charcoal</title>
+</head>
+<body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+  <div class="container">
+    <h1>Charcoal</h1>
+    <h2>About</h2>
+    <p>Charcoal is an web app that recommends characters for you when you type something. It uses machine learning ooh :o</p>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Write a story!</h2>
+        <textarea id="input" rows="4" cols="50"></textarea>
+      </div>
+      <div class="col-md-6">
+        <h2>Next character...</h2>
+        <ol id="recs"></ol>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
