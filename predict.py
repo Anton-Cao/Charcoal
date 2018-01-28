@@ -38,11 +38,11 @@ def predict_next_chars(s):
     chars = sorted(chars, key = lambda c : c[1], reverse=True)
     return list(map(lambda c : c[0], chars))
 
-def generate_story(seed, length, var):
+def generate_story(seed, length, creativity):
     '''
     Generates a story using predict_next_chars with starting seed and length 
     '''
     story = seed
     while len(story) < length:
-        story += predict_next_chars(story)[random.randint(0, var)]
+        story += predict_next_chars(story)[random.randint(0, creativity)]
     return story

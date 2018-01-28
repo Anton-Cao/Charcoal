@@ -5,11 +5,15 @@
 <body>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
 
   <div class="container">
     <h1>Charcoal</h1>
+    <br>
     <h2>About</h2>
     <p>Charcoal is an web app that recommends characters for you when you type something. It uses machine learning ooh :o</p>
+
+    <br>
     <div class="row">
       <div class="col-md-6">
         <h2>Write a story!</h2>
@@ -18,6 +22,32 @@
       <div class="col-md-6">
         <h2>Next character...</h2>
         <ol id="recs"></ol>
+      </div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Generate a story!</h2>
+        <form class="form-inline" id="story-form">
+          <div class="row">
+            <div class="input-group mb-2 mr-sm-2">
+              <input type="text" class="form-control" placeholder="Seed" name="seed">
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <input type="number" class="form-control" placeholder="Length" name="length">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group mb-2 mr-sm-2">
+              <input type="number" class="form-control" placeholder="Creativity" name="creativity">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Go!</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h2>Story...</h2>
+        <div id="story"></div>
       </div>
     </div>
   </div>

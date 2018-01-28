@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  console.log("javascript loaded");
-
   function success(rec) {
     $('#recs').empty();
     for (let i = 0; i < 5; i++) {
@@ -14,12 +12,30 @@ $(document).ready(function() {
     };
     
     $.ajax({
-      type: "POST",
-      url: '/',
-      data: JSON.stringify(data, null, '\t'),
+      type: "GET",
+      url: '/rec',
+      data: data,
       contentType: "application/json; charset=utf-8", // this
       dataType: "json", // and this
-      success: success
+      success:  function(rec) {
+        $('#recs').empty();
+        for (let i = 0; i < 5; i++) {
+          $('#recs').append('<li>' + rec[i] + '</li>');
+        }
+      }
+    });
+  });
+
+  $('#story-form').submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "GET",
+      url: '/story',
+      data: $(this).serialize(),
+      success: function(story) {
+        $('#story').empty();
+        $('#story').append('<p>' + story + '</p');
+      }
     });
   });
 });
