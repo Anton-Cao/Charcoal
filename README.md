@@ -8,6 +8,20 @@ Simple character recommender for story writing. Built at Hack@Brown 2018.
 - Logistic regression model trained on data using one-hot encodings for the characters
 - Flask server allows user to interact with the trained model
 
+## Setup
+- Create a virtualenv (`virtualenv env`)
+- Activate virtualenv (`source env/bin/activate`)
+- Download dependencies (`pip install -r requirements.txt`)
+
+### How to train
+- Paste training data into `text.txt`
+- Change paramters in `utils.py`
+- Run `fileparse.py` to generate the csv in `training_data.csv`
+- Run `train_model.py` to train and save model to `model.pkl`
+
+### How to run
+- Run `python web.py`
+- Go to `localhost:5000`
+
 ## Future Updates
-- Generate story feature
 - Webcrawl wikipedia for more training data
