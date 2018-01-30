@@ -18,8 +18,8 @@ Simple character recommender for story writing. Built at Hack@Brown 2018.
 ### How to train
 - Paste training data into `text.txt`
 - Change paramters in `utils.py`
-- Run `fileparse.py` to generate the csv in `training_data.csv`
-- Run `train_model.py` to train and save model to `model.pkl`
+- Run `python fileparse.py` to generate the csv in `training_data.csv`
+- Run `python train_model.py` to train and save model to `model.pkl`
 
 ### How to run
 - Run `python web.py`
