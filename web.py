@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, jsonify
+import os
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from predict import predict_next_chars as pnc
 from predict import generate_story as gs
 
@@ -6,6 +7,11 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('index.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/png')
 
 @app.route('/rec', methods=['GET'])
 def update():
