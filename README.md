@@ -1,6 +1,8 @@
 # Charcoal
 Simple character recommender for story writing. Built at Hack@Brown 2018.
 
+![website](image.png "Website")
+
 ## How it works
 - Training data comes from [Nate the Snake](http://natethesnake.com/)
   - Label is each character in the text
